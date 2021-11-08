@@ -61,8 +61,7 @@ handle = 'anonymous';
 boardId = null;
 
 LandingPageController = class {
-	boardService = {};
-	board = [];
+	boardService = new BoardService();
 
 	constructor() {
 		this.boardService = new BoardService();
@@ -82,8 +81,11 @@ LandingPageController = class {
 
 	join() {
 		handle = document.querySelector('#inputHandle').value;
-		boardId = document.querySelector('#inputBoard').value;
+		boardId = document.querySelector('#inputBoard').value.toLowerCase();
 		this.refreshBoard();
+		let refreshInterval = setInterval(() => {
+			this.refreshBoard();
+		}, 3000)
 	}
 	
 	refreshBoard() {

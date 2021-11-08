@@ -12,10 +12,10 @@ body {
 }
 
 .scroll { 
-    overflow:auto;
-    height: 100%;
-    margin-bottom: 82px;
 
+    margin-bottom: 82px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .bottom-navbar { 
